@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic.WebApi", "VeterinaryClinic.WebApi\VeterinaryClinic.WebApi.csproj", "{3A05A46D-2007-41E4-A42B-A68DBBF5B868}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1746B78E-6796-4DD3-A298-24F3A8EDC581}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Notes", "_Notes", "{A510FAEE-2D29-46DD-A379-A217D76B1500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic.Domain", "VeterinaryClinic.Domain\VeterinaryClinic.Domain.csproj", "{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic.Domain.Tests", "VeterinaryClinic.Domain.Tests\VeterinaryClinic.Domain.Tests.csproj", "{DA77C010-FA01-457A-96AC-94C771A05862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic.WebApi.Tests", "VeterinaryClinic.WebApi.Tests\VeterinaryClinic.WebApi.Tests.csproj", "{0037B44E-2CDF-40C6-8E62-72D80D4859C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A05A46D-2007-41E4-A42B-A68DBBF5B868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A05A46D-2007-41E4-A42B-A68DBBF5B868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A05A46D-2007-41E4-A42B-A68DBBF5B868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A05A46D-2007-41E4-A42B-A68DBBF5B868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA77C010-FA01-457A-96AC-94C771A05862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA77C010-FA01-457A-96AC-94C771A05862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA77C010-FA01-457A-96AC-94C771A05862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA77C010-FA01-457A-96AC-94C771A05862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0037B44E-2CDF-40C6-8E62-72D80D4859C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0037B44E-2CDF-40C6-8E62-72D80D4859C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0037B44E-2CDF-40C6-8E62-72D80D4859C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0037B44E-2CDF-40C6-8E62-72D80D4859C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DA8A1B5-2F12-4EC6-B4C2-C2906E1F5626} = {1746B78E-6796-4DD3-A298-24F3A8EDC581}
+		{DA77C010-FA01-457A-96AC-94C771A05862} = {1746B78E-6796-4DD3-A298-24F3A8EDC581}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {209971D0-D062-4E86-8026-B1BE330F0233}
+	EndGlobalSection
+EndGlobal
