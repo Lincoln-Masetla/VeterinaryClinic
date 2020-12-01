@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowComponent } from './show.component';
+import { PetShowComponent } from './pet-show.component';
 
-describe('ShowComponent', () => {
-  let component: ShowComponent;
-  let fixture: ComponentFixture<ShowComponent>;
+describe('PetShowComponent', () => {
+  let component: PetShowComponent;
+  let fixture: ComponentFixture<PetShowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowComponent ]
+      declarations: [ PetShowComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowComponent);
+    fixture = TestBed.createComponent(PetShowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

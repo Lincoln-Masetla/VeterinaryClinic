@@ -10,6 +10,8 @@ import { PetComponent } from './pet/pet.component';
 import { SharedService } from './core/services/shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PetShowComponent } from './pet/pet-show/pet-show.component';
+import { PetAddEditComponent } from './pet/pet-add-edit/pet-add-edit.component';
 
 
 
@@ -19,7 +21,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     OwnerComponent,
     ShowComponent,
     AddEditComponent,
-    PetComponent
+    PetComponent,
+    PetShowComponent,
+    PetAddEditComponent
   ],
   imports: [
     BrowserModule,

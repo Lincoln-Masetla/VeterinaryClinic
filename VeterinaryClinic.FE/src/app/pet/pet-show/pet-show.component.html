@@ -1,0 +1,81 @@
+<button
+  type="button"
+  class="btn btn-primary float-right m-2"
+  (click)="addPet()"
+  data-toggle="modal"
+  data-target="#exampleModal"
+  data-backdrop="static"
+  data-keyboard="false"
+>
+  Add Pet
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species Type</th>
+      <th>Birth Date</th>
+      <th>Colour</th>
+      <th>Notes</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of pets">
+      <td>{{ item.name }}</td>
+      <td>{{ item.speciesType }}</td>
+      <td>{{ item.birthDate }}</td>
+      <td>{{ item.colour }}</td>
+      <td>{{ item.notes }}</td>
+      <td>
+         <button
+          (click)="editPet(item)"
+          type="button"
+          class="m-1 btn btn-light btn-outline-primary"
+          data-toggle="modal"
+          data-target="#exampleModal"
+          data-backdrop="static"
+          data-keyboard="false"
+        >
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+        </svg> edit
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-pet-add-edit
+        [ownerId]="ownerId"
+          *ngIf="edit"
+        ></app-pet-add-edit>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,1 +1,83 @@
-<p>add-edit works!</p>
+<div class="container">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf='error'>
+    <button type="button" class="close" aria-label="Close" (click)="closeErrorAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+   {{message}}
+  </div>
+  <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf='success'>
+    <button type="button" class="close" aria-label="Close" (click)="closeSuccessAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{message}}
+  </div>
+  <form #addEditOwner="ngForm" (ngSubmit)="submit();">
+    <div class="form-group ">
+      <label class="label">Name*</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ownerNameId"
+          name="ownerName"
+          [(ngModel)]="ownerName"
+          placeholder="Enter Owner Name"
+          min="3"
+          ngModel
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Cell Number*</label>
+        <input
+          id="ownerCellNo"
+          name="ownerCellNo"
+          type="tel"
+          class="form-control"
+          [(ngModel)]="ownerCellNo"
+          placeholder="Enter Owner Cell No"
+          min="10"
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Owner Address*</label>
+        <input
+          id="ownerAddress"
+          name="ownerAddress"
+          type="text"
+          class="form-control"
+          [(ngModel)]="ownerAddress"
+          min="3"
+          placeholder="Enter Owner Address"
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Owner Email*</label>
+        <input
+          id="ownerEmail"
+          name="ownerEmail"
+          type="email"
+          class="form-control"
+          [(ngModel)]="ownerEmail"
+          placeholder="Enter Owner Name"
+          min="3"
+          required
+        />
+    </div>
+
+    <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!addEditOwner.valid"
+  >
+    Save Owner
+  </button>
+    <app-pet-show [ownerId]="ownerId" *ngIf="owner"></app-pet-show>
+
+
+  </form>
+</div>

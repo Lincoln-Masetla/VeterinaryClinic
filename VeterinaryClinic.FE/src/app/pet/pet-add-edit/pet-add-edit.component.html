@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="alert alert-danger" role="alert" *ngIf='error'>
+    Oops!! Something went wrong please try again later :(
+  </div>
+  <form #addEditPet="ngForm" (ngSubmit)="submit();">
+    <div class="form-group ">
+      <label class="label">Pet Name*</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          [(ngModel)]="name"
+          placeholder="Enter Pet Name"
+          min="3"
+          ngModel
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Pet Species Type*</label>
+        <input
+          id="speciesType"
+          name="speciesType"
+          type="text"
+          class="form-control"
+          [(ngModel)]="speciesType"
+          placeholder="Enter Pet Species Type"
+          min="10"
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Pet Birth Date*</label>
+        <input
+          id="birthDate"
+          name="birthDate"
+          type="date"
+          class="form-control"
+          [(ngModel)]="birthDate"
+          min="3"
+          placeholder="Enter Owner Birth Date"
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Pet Colour*</label>
+        <input
+          id="colour"
+          name="colour"
+          type="text"
+          class="form-control"
+          [(ngModel)]="colour"
+          placeholder="Enter Owner Name"
+          min="3"
+          required
+        />
+    </div>
+
+    <div class="form-group ">
+      <label class="label">Owner Email*</label>
+        <textarea
+          id="notes"
+          name="notes"
+          type="text"
+          class="form-control"
+          [(ngModel)]="notes"
+          placeholder="Enter Owner Notes"
+          min="3"
+          required
+        ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!addEditPet.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
+

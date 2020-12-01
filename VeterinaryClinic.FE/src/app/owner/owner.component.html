@@ -1,1 +1,7 @@
-<app-show></app-show>
+<app-show (owner)="setOwner($event)" (edit)="setEdit($event)" *ngIf="!edit">
+</app-show>
+<app-add-edit
+  (edit)="setEdit($event)"
+  [owner]="owner"
+  *ngIf="edit"
+></app-add-edit>
