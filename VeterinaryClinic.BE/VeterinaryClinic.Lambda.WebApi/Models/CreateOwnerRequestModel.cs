@@ -1,12 +1,9 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace VeterinaryClinic.WebApi.Models.Requests
+namespace VeterinaryClinic.Lambda.WebApi.Models
 {
-  public class UpdateOwnerRequestModel
+  public class CreateOwnerRequestModel
   {
-    [Required]
-    public int? OwnerId { get; set; }
     [Required]
     public string Name { get; set; }
     [Required]

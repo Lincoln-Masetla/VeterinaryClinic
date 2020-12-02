@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VeterinaryClinic.Domain.Commands.Pets;
 using VeterinaryClinic.Domain.Contexts;
-using VeterinaryClinic.WebApi.Models.Requests;
+using VeterinaryClinic.Lambda.WebApi.Models;
 
-namespace VeterinaryClinic.WebApi.Controllers
+namespace VeterinaryClinic.Lambda.WebApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class PetsController : Controller
+  public class PetsController : ControllerBase
   {
     private readonly DomainContext domainContext;
 
@@ -54,7 +54,7 @@ namespace VeterinaryClinic.WebApi.Controllers
     {
       try
       {
-        var created = await new GetPetsByOwner(domainContext) 
+        var created = await new GetPetsByOwner(domainContext)
         {
           OwnerId = ownerId
         }.ExecuteAsync();
@@ -68,8 +68,8 @@ namespace VeterinaryClinic.WebApi.Controllers
       }
     }
 
-    [HttpGet("{petId}/{ownerId}")]
-    public async Task<IActionResult> GetPetsByKey(int petId, int ownerId)
+    [HttpGet("{petId}/{ownerId}")] //:( didnt get to use this method
+    public async Task<IActionResult> GetPetByKey(int petId, int ownerId)
     {
       try
       {
@@ -105,6 +105,26 @@ namespace VeterinaryClinic.WebApi.Controllers
           Colour = request.Colour,
           OwnerId = request.OwnerId.GetValueOrDefault(),
           Notes = request.Notes
+        }.ExecuteAsync();
+
+        return Ok(created);
+      }
+      catch (Exception ex)
+      {
+        Debug.WriteLine(ex);
+        return BadRequest();
+      }
+    }
+
+    [HttpDelete("{petId}/{ownerId}")]
+    public async Task<IActionResult> DeletePet(int petId, int ownerId)
+    {
+      try
+      {
+        var created = await new DeletePet(domainContext)
+        {
+          PetId = petId,
+          OwnerId = ownerId
         }.ExecuteAsync();
 
         return Ok(created);

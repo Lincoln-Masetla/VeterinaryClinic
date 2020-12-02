@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace VeterinaryClinic.WebApi.Models.Requests
+namespace VeterinaryClinic.Lambda.WebApi.Models
 {
   public class CreatePetRequestModel
   {

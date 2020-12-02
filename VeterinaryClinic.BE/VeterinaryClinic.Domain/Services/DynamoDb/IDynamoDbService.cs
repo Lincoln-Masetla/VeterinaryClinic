@@ -22,5 +22,8 @@ namespace VeterinaryClinic.Domain.Services
     Task<Pet> GetPet(int id, int ownerId);
 
     Task<List<Pet>> GetPets(int ownerId);
+
+    Task<Pet> DeletePet(int id, int ownerId);
+    
   }
 }

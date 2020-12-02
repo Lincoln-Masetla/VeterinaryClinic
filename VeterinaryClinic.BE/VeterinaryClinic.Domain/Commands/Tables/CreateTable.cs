@@ -21,7 +21,7 @@ namespace VeterinaryClinic.Domain.Commands.Tables
 
     protected override Task<string> ExecuteInternal()
     {
-      domainContext.DynamoDbTableService.CreateOwnerTable();
+      //domainContext.DynamoDbTableService.CreateOwnerTable();
       domainContext.DynamoDbTableService.CreatePetTable();
       return Task.FromResult("Successfully created Table");
     }

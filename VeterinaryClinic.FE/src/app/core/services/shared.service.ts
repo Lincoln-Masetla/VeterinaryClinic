@@ -10,7 +10,7 @@ import { PetResponseModel } from '../models/pet/pet-response-model';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl = 'https://localhost:44345/api';
+readonly APIUrl = 'https://uq8dlh68z4.execute-api.us-west-1.amazonaws.com/Prod/api';
   constructor(private http: HttpClient) { }
 
   getOwners(): Observable<OwnerResponseModel[]>{

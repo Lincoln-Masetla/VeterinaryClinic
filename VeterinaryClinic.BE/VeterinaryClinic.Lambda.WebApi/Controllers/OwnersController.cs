@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using VeterinaryClinic.Domain.Commands.Owners;
 using VeterinaryClinic.Domain.Contexts;
 using VeterinaryClinic.Domain.Domain.Commands.Owners;
-using VeterinaryClinic.WebApi.Models.Requests;
+using VeterinaryClinic.Lambda.WebApi.Models;
 
-namespace VeterinaryClinic.WebApi.Controllers
+namespace VeterinaryClinic.Lambda.WebApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]

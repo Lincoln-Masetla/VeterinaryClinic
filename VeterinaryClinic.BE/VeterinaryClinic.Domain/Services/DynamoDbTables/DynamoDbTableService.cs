@@ -22,13 +22,6 @@ namespace VeterinaryClinic.Domain.Services
       {
         var tableName = "Owners";
 
-        var requests = new DeleteTableRequest
-        {
-          TableName = tableName
-        };
-
-        await DynamoDbClient.DeleteTableAsync(requests);
-
         var request = new CreateTableRequest
         {
           AttributeDefinitions = new List<AttributeDefinition>
@@ -69,13 +62,6 @@ namespace VeterinaryClinic.Domain.Services
     public async Task CreatePetTable()
     {
       var tableName = "Pets";
-
-      var requests = new DeleteTableRequest
-      {
-        TableName = tableName
-      };
-
-      await DynamoDbClient.DeleteTableAsync(requests);
 
       var request = new CreateTableRequest
       {

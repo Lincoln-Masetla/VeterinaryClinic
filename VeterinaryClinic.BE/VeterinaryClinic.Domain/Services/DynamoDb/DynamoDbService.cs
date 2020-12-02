@@ -135,6 +135,18 @@ namespace VeterinaryClinic.Domain.Services
       return PetResponseBuilder.Create(result);
     }
 
+    public async Task<Pet> DeletePet(int petId, int ownerId)
+    {
+      // Load our specific table 
+      var petTable = Table.LoadTable(DynamoClient, "Pets");
+
+      // get the owner
+      var result = await petTable.DeleteItemAsync(petId, ownerId);
+
+      //Map results  to response
+      return null;
+    }
+
     public async Task<List<Pet>> GetPets(int ownerId)
     {
       // Load our specific table 
