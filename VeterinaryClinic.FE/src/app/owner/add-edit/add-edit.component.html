@@ -71,13 +71,21 @@
 
     <button
     type="submit"
-    class="btn btn-primary"
+    class="m-1 btn btn-primary"
     [disabled]="!addEditOwner.valid"
   >
     Save Owner
   </button>
-    <app-pet-show [ownerId]="ownerId" *ngIf="owner"></app-pet-show>
 
-
+  <button
+  type="button"
+  class="m-1 btn btn-info"
+  (click)="cancel()"
+>
+  Cancel
+</button>
   </form>
 </div>
+<br/>
+<br/>
+  <app-pet-show [ownerId]="ownerId" *ngIf="owner" (response)="setResponse($event)"></app-pet-show>

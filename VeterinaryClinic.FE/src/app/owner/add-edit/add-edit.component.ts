@@ -47,11 +47,14 @@ export class AddEditComponent implements OnInit {
 
     this.service.createOwner(addRequest).subscribe(
       (data) => {
+        this.owner = data;
+        this.ownerId = this.owner.ownerId;
         this.success = true;
         this.message = 'Successfully Created Owner';
       },
       () => {
-        this.message = 'Oops!! Something went wrong while Creating Owner :( try again later';
+        this.message =
+          'Oops!! Something went wrong while Creating Owner :( try again later';
         this.error = true;
       }
     );
@@ -59,7 +62,7 @@ export class AddEditComponent implements OnInit {
 
   updateOwner(): void {
     const updateRequest: OwnerResponseModel = {
-      ownerId: this.ownerId,
+      ownerId: this.ownerId ,
       name: this.ownerName,
       email: this.ownerEmail,
       cellNo: this.ownerCellNo,
@@ -68,11 +71,12 @@ export class AddEditComponent implements OnInit {
 
     this.service.updateOwner(updateRequest).subscribe(
       (data) => {
-       this.success = true;
-       this.message = 'Successfully Updated Owner';
+        this.success = true;
+        this.message = 'Successfully Updated Owner';
       },
       () => {
-        this.message = 'Oops!! Something went wrong while Updating Owner :( try again later';
+        this.message =
+          'Oops!! Something went wrong while Updating Owner :( try again later';
         this.error = true;
       }
     );
@@ -92,5 +96,15 @@ export class AddEditComponent implements OnInit {
     } else {
       this.addOwner();
     }
+  }
+
+  public setResponse(res: any): void {
+    this.error = res.error;
+    this.success = res.success;
+    this.message = res.message;
+  }
+
+  cancel(): void {
+    window.location.reload();
   }
 }

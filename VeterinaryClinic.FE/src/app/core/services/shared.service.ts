@@ -38,7 +38,7 @@ readonly APIUrl = 'https://localhost:44345/api';
   }
 
   UpdatePet(request: PetResponseModel ): Observable<PetResponseModel>{
-    return this.http.post<PetResponseModel>(`${this.APIUrl}/pets`, request);
+    return this.http.put<PetResponseModel>(`${this.APIUrl}/pets`, request);
   }
 
   DeletePet(petId: number, ownerId: number): Observable<PetResponseModel>{

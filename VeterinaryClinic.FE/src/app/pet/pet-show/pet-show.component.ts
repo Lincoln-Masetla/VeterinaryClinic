@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PetResponseModel } from 'src/app/core/models/pet/pet-response-model';
@@ -16,6 +16,8 @@ export class PetShowComponent implements OnInit, OnDestroy {
   @Input() ownerId: any;
   pet: any;
   edit: boolean = false;
+  @Output() response: EventEmitter<any> = new EventEmitter<any>();
+  @ViewChild('closebutton') closebutton: any;
 
   constructor(private service: SharedService) {}
 
@@ -37,7 +39,6 @@ export class PetShowComponent implements OnInit, OnDestroy {
   }
 
   addPet(): void {
-
     this.pet = null;
     this.edit = true;
   }
@@ -47,8 +48,21 @@ export class PetShowComponent implements OnInit, OnDestroy {
     this.edit = true;
   }
 
+  deletePet(pet: PetResponseModel): void {
+    this.service.DeletePet( pet.petId, pet.ownerId).subscribe( data => this.getPets());
+  }
+
   closePet(): void {
     this.edit = false;
     this.getPets();
+    this.closebutton.nativeElement.click();
   }
+
+  public setResponse(res: any): void {
+    this.closebutton.nativeElement.click();
+    this.response.emit(res);
+    this.getPets();
+    this.edit = false;
+  }
+
 }

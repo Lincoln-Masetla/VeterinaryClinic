@@ -9,11 +9,10 @@ import { AddEditComponent } from './owner/add-edit/add-edit.component';
 import { PetComponent } from './pet/pet.component';
 import { SharedService } from './core/services/shared.service';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetShowComponent } from './pet/pet-show/pet-show.component';
 import { PetAddEditComponent } from './pet/pet-add-edit/pet-add-edit.component';
-
-
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,16 +22,16 @@ import { PetAddEditComponent } from './pet/pet-add-edit/pet-add-edit.component';
     AddEditComponent,
     PetComponent,
     PetShowComponent,
-    PetAddEditComponent
+    PetAddEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [SharedService],
-  bootstrap: [AppComponent]
+  providers: [SharedService, DatePipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
