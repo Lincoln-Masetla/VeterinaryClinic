@@ -1,22 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using VeterinaryClinic.Domain;
+using VeterinaryClinic.Domain.Services;
+using IHostingEnvironment = Microsoft.Extensions.Hosting.IHostingEnvironment;
 
 namespace VeterinaryClinic.Lambda.WebApi
 {
   public class Startup
   {
-    public const string AppS3BucketKey = "AppS3Bucket";
 
     public Startup(IConfiguration configuration)
     {
@@ -35,6 +30,7 @@ namespace VeterinaryClinic.Lambda.WebApi
       var runLocalDynamoDb = dynamoDbConfig.GetValue<bool>("LocalMode");
       var dynamoDbUrl = dynamoDbConfig.GetValue<string>("LocalServiceUrl");
       services.AddDomainModuleDependencies(runLocalDynamoDb, dynamoDbUrl);
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

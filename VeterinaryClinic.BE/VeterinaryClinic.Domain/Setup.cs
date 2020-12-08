@@ -9,15 +9,15 @@ namespace VeterinaryClinic.Domain
   {
     public static void AddDomainModuleDependencies(this IServiceCollection services, bool runLocalDynamoDb, string dynamoDbUrl)
     {
-      services.AddSingleton<IDynamoDbService, DynamoDbService>();
-      services.AddSingleton<IDynamoDbTableService, DynamoDbTableService>();
-      services.AddScoped<DomainContext, DomainContext>();
+      services.AddTransient<IDynamoDbService, DynamoDbService>();
+      services.AddTransient<IDynamoDbTableService, DynamoDbTableService>();
+      services.AddTransient<DomainContext, DomainContext>();
 
       if (!runLocalDynamoDb)
         services.AddAWSService<IAmazonDynamoDB>();
       else
       {
-        services.AddSingleton<IAmazonDynamoDB>(sp =>
+        services.AddTransient<IAmazonDynamoDB>(sp =>
         {
           var clientConfig = new AmazonDynamoDBConfig { ServiceURL = dynamoDbUrl };
           return new AmazonDynamoDBClient(clientConfig);

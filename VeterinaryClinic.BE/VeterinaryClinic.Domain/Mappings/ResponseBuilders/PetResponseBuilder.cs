@@ -18,7 +18,7 @@ namespace VeterinaryClinic.Domain.Mappings.ResponseBuilders
         Notes = result["Notes"],
         Name = result["Name"],
         OwnerId = int.Parse(result["OwnerId"]),
-        SpeciesType = result["Name"],
+        SpeciesType = result["SpeciesType"],
       };
     }
 
