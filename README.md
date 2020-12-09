@@ -21,15 +21,15 @@ FOR LOCAL Database instance
    https://localhost:44345/api/tables/create
    ```
 FOR REMOTE Database instance 
-    -   Please ask me for 
+-   Please ask me for 
 ``` 
         "AccessKey": "from me", 
         "SecretKey": "from me"
 ```
 
 OR you can create your own Remote Dynamodb
-    - Create a table Owners with Primary Key of OwnerId
-    - Create a table Pets with Primary Key of PetId and Sort key of OwnerId 
+ - Create a table Owners with Primary Key of OwnerId
+ - Create a table Pets with Primary Key of PetId and Sort key of OwnerId 
 
 
 
